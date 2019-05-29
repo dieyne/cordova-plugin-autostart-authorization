@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-autostart-permission",
+  "version": "0.0.1",
+  "description": "plugin to show autostart permission in android",
+  "cordova": {
+    "id": "cordova-plugin-autostart-permission",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "sathish",
+  "license": "ISC"
+}
