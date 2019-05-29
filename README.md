@@ -1,8 +1,9 @@
 # cordova-plugin-autostart-permission
 Plugin for showing autostart permission dialogue box in android 
 
-
-![Screenshot_2019-05-29-19-17-42-909_io ionic starter](https://user-images.githubusercontent.com/15616596/58562658-4ac19400-8247-11e9-8642-f7c509129445.png)
+<div>
+<img src="https://user-images.githubusercontent.com/15616596/58562658-4ac19400-8247-11e9-8642-f7c509129445.png" width="250">
+</div>
 
 
 
