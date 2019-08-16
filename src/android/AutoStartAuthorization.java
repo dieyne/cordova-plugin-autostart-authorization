@@ -1,4 +1,4 @@
-package cordova.plugin.autostart.permission;
+package cordova.plugin.autostart.authorization;
 
 import android.app.AlertDialog;
 import android.content.ComponentName;
@@ -12,12 +12,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.text.Html;
 import android.util.Log;
 import android.content.SharedPreferences;
+
+import org.apache.cordova.BuildConfig;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -47,10 +50,13 @@ public class AutoStartAuthorization extends CordovaPlugin {
       } catch (JSONException e) {
       }
         if (action.equals("openAutoStartAuthorizationDialog")) {
+            Log.d("ici1","ici1");
             if(appGetFirstTimeRun() == 0||force==true){
+                Log.d("ici2","ici2");
            openAutoStartAuthorizationDialog(callbackContext);
             return true;
             }
+            Log.d("ici3","ici3");
             return false;
         }
         return false;
@@ -101,7 +107,7 @@ public class AutoStartAuthorization extends CordovaPlugin {
             Intent intent = new Intent();
 
               for (Intent intent1 : POWERMANAGER_INTENTS){
-                if (getPackageManager().resolveActivity(intent1, PackageManager.MATCH_DEFAULT_ONLY) == null) {
+                if (context.getPackageManager().resolveActivity(intent1, PackageManager.MATCH_DEFAULT_ONLY) == null) {
                         intent = new Intent(android.provider.Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
                 }else{
                     intent = intent1;
@@ -156,6 +162,5 @@ public class AutoStartAuthorization extends CordovaPlugin {
         new Intent().setComponent(new ComponentName("com.htc.pitroad", "com.htc.pitroad.landingpage.activity.LandingPageActivity"))
 };
 }
-
 
 
