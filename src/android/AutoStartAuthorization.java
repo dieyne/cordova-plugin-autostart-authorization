@@ -111,6 +111,7 @@ public class AutoStartAuthorization extends CordovaPlugin {
                         intent = new Intent(android.provider.Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
                 }else{
                     intent = intent1;
+                    break;
                 }
                 
             }
